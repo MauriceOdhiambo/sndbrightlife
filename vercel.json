@@ -1,0 +1,18 @@
+{
+  "functions": {
+    "api/server.js": {
+      "maxDuration": 60
+    },
+    "api/cron/[job].js": {
+      "maxDuration": 60
+    }
+  },
+  "crons": [
+    { "path": "/api/cron/daily-summary", "schedule": "0 5 * * *" },
+    { "path": "/api/cron/weekly-summary", "schedule": "0 4 * * 1" },
+    { "path": "/api/cron/monthly-summary", "schedule": "0 4 1 * *" },
+    { "path": "/api/cron/overdue-loans", "schedule": "0 3 * * *" },
+    { "path": "/api/cron/pending-approvals", "schedule": "0 7 * * *" },
+    { "path": "/api/cron/pending-approvals", "schedule": "0 13 * * *" }
+  ]
+}
